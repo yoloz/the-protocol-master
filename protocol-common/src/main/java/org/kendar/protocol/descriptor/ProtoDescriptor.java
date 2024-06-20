@@ -68,7 +68,7 @@ public abstract class ProtoDescriptor {
      *
      * @param start
      */
-    private void buildProtocolDescription(ProtoState start) {
+    public void buildProtocolDescription(ProtoState start) {
         log.warn("[SERVER] Not implemented ProtoDescriptor::buildProtocolDescription");
     }
 

@@ -698,12 +698,15 @@ public abstract class ProtoContext {
         if (ex instanceof FailedStateException) {
             event = ((FailedStateException) ex).getEvent();
             state = ((FailedStateException) ex).getState();
+            log.error("FailedStateException: Event[{}], {}", event.getClass().getName(), ex.getMessage());
+        } else {
+            log.error("Internal Exception: {}", ex.getMessage(), ex);
         }
-        var exceptionResults = runException(ex, state, event);
-        for (var exceptionResult : exceptionResults) {
-            log.error("Message: " + exceptionResult.getClass().getSimpleName());
-            write(exceptionResult);
-        }
+//        var exceptionResults = runException(ex, state, event);
+//        for (var exceptionResult : exceptionResults) {
+//            log.error("Message: " + exceptionResult.getClass().getSimpleName());
+//            write(exceptionResult);
+//        }
     }
 
 
