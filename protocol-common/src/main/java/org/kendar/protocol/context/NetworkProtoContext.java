@@ -121,6 +121,10 @@ public abstract class NetworkProtoContext extends ProtoContext {
         }
     }
 
+    public ClientServerChannel getClient() {
+        return client;
+    }
+
     /**
      * Retrieve the current proxy instance
      *
